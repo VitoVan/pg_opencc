@@ -4,6 +4,8 @@ pg_opencc is a PostgreSQL extension for conversions between Traditional Chinese,
 
 PostgreSQL 中文簡繁轉換擴展，支持詞彙級別的轉換、異體字轉換和地區習慣用詞轉換（中國大陸、臺灣、香港、日本新字體）。
 
+已驗證環境 Tested on: Ubuntu 21.10 / PostgreSQL 13
+
 ## Introduction 介紹
 
 ![OpenCC](https://opencc.byvoid.com/img/opencc.png) ![PostgreSQL](https://avatars.githubusercontent.com/u/177543?s=55&v=4)
@@ -43,13 +45,13 @@ For the list of supported functions, check:
 
     Make sure you have installed the following software:
 
-   1. Development files for PostgreSQL
-   2. PostgreSQL Server
-   3. Utility for directing compilation
-   4. GNU C compiler
-   5. Development files for opencc
-   6. Helper tool to manage compile and link flags for libraries
-   7. Git SCM (Optional 非必選)
+   - Development files for PostgreSQL
+   - PostgreSQL Server
+   - Utility for directing compilation
+   - GNU C compiler
+   - Development files for opencc
+   - Helper tool to manage compile and link flags for libraries
+   - Git SCM (Optional 非必選)
 
     For Ubuntu:
 
@@ -70,40 +72,27 @@ For the list of supported functions, check:
     TODO
     ```
 
-2. 構建
+2. 構建 Build & 安裝 Install
 
-    Build
+    ```bash
+    # 下載源代碼 Download the source code
+    git clone https://github.com/VitoVan/pg_opencc.git
 
-    1. 下載源代碼 Download the source code
+    # 编译 Compile
+    cd pg_opencc
+    make
+
+    # 安裝擴展
+    sudo make install
+    ```
     
-        ```bash
-        git clone https://github.com/VitoVan/pg_opencc.git
-        ```
+3. 激活擴展
 
-    2. 编译 Compile
-
-        ```bash
-        cd pg_opencc
-        make
-        ```
-
-3. 安裝 Install
-
-    1. 安裝擴展
+    ```bash
+    # Bash Shell
+    sudo -u postgres psql
     
-        ```bash
-        sudo make install
-        ```
-
-    2. 激活擴展
-
-        ```bash
-        # Bash Shell
-        sudo -u postgres psql
-        ```
-
-        ```sql
-        # SQL Shell
-        postgres=# CREATE EXTENSION pg_opencc;
-        CREATE EXTENSION
-        ```
+    # SQL Shell
+    postgres=# CREATE EXTENSION pg_opencc;
+    CREATE EXTENSION
+    ```
