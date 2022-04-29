@@ -4,11 +4,6 @@ pg_opencc is a PostgreSQL extension for conversions between Traditional Chinese,
 
 PostgreSQL 中文簡繁轉換擴展，支持詞彙級別的轉換、異體字轉換和地區習慣用詞轉換（中國大陸、臺灣、香港、日本新字體）。
 
-已驗證環境 Tested on:
-
-- Ubuntu 21.10 / libopencc-dev 1.1.1 / PostgreSQL 13.6
-- Fedora 35 / opencc-devel 1.1.2 / PostgreSQL 13.4
-
 ## Introduction 介紹
 
 ![pg_opencc](pg_opencc.png "pg_opencc")
@@ -112,3 +107,8 @@ For the list of supported functions, check:
     postgres=# CREATE EXTENSION pg_opencc;
     CREATE EXTENSION
     ```
+
+## 已驗證環境 Tested on:
+
+- Ubuntu 21.10 / libopencc-dev 1.1.1 / PostgreSQL 13.6
+- Fedora 35 / opencc-devel 1.1.2 / PostgreSQL 13.4
