@@ -11,6 +11,10 @@ CREATE FUNCTION opencc_t2s(text) RETURNS text
     AS 'MODULE_PATHNAME','opencc_t2s'
     LANGUAGE C IMMUTABLE STRICT;
 
+CREATE FUNCTION opencc_t2s_lexize(internal, internal, internal, internal) RETURNS internal
+    AS 'MODULE_PATHNAME','opencc_t2s_lexize'
+    LANGUAGE C STRICT;
+
 -- 簡體到臺灣正體
 CREATE FUNCTION opencc_s2tw(text) RETURNS text
     AS 'MODULE_PATHNAME','opencc_s2tw'
@@ -70,3 +74,12 @@ CREATE FUNCTION opencc_jp2t(text) RETURNS text
 CREATE FUNCTION opencc_tw2t(text) RETURNS text
     AS 'MODULE_PATHNAME','opencc_tw2t'
     LANGUAGE C IMMUTABLE STRICT;
+
+
+CREATE TEXT SEARCH TEMPLATE opencc_t2s (
+        LEXIZE = opencc_t2s_lexize
+);
+
+CREATE TEXT SEARCH DICTIONARY opencc_t2s (
+        TEMPLATE = opencc_t2s
+);
