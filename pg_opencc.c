@@ -40,6 +40,7 @@ Datum opencc_tw2t (PG_FUNCTION_ARGS);
 char* opencc_convert (char* input, char config[]) {
     opencc_t opencc = opencc_open(config); // e.g.: config = "s2t.json"
     char* converted = opencc_convert_utf8(opencc, input, strlen(input));
+    opencc_close(opencc);
     return converted;
 }
 
