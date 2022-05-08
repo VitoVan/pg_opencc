@@ -39,17 +39,9 @@ For the list of supported functions, check:
 
 ## Installation 安裝
 
-1. 確保目標機器上已經安裝好以下軟體：
+1. 確保目標機器上已經安裝好構建依賴項：
 
-    Make sure you have installed the following software:
-
-   - Development files for PostgreSQL
-   - PostgreSQL Server
-   - Utility for directing compilation
-   - GNU C compiler
-   - Development files for opencc
-   - Helper tool to manage compile and link flags for libraries
-   - Git SCM (Optional 非必選)
+    Make sure you have installed the software for compilation:
 
     For Ubuntu:
 
